@@ -88,5 +88,40 @@ function showResults(){
         let t = numbers.length;
         times.textContent = `Dice was rolled ${t} times.`
         res.appendChild(times);
+        let histogram = document.createElement("div");
+        histogram.className =`histogram`;
+        res.appendChild(histogram);
+        createHistogram(numbers);
+    }
+}
+
+function createHistogram(data) {
+    const histogramContainer = document.querySelector('.histogram');
+    
+    // Initialize an object to store the frequency of each number
+    const frequencyMap = {};
+    
+    // Initialize frequencies for all numbers from 2 to 12
+    for (let i = 2; i <= 12; i++) {
+        frequencyMap[i] = 0;
+    }
+
+    // Count the frequency of each number in the data array
+    data.forEach(number => {
+        if (frequencyMap[number] !== undefined) {
+            frequencyMap[number]++;
+        }
+    });
+
+    // Loop through the numbers and create bars for each number
+    for (let i = 2; i <= 12; i++) {
+        const bar = document.createElement('div');
+        bar.classList.add('bar');
+        bar.style.height = `${frequencyMap[i] * 20}px`; // Adjust the scaling as needed
+        const barLabel = document.createElement('div');
+        barLabel.classList.add('bar-label');
+        barLabel.textContent = `${i}: ${frequencyMap[i]}`;
+        bar.appendChild(barLabel);
+        histogramContainer.appendChild(bar);
     }
 }

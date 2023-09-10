@@ -158,3 +158,27 @@ body{
     gap: 20px;
     padding: 50px;
 }
+
+
+.histogram {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.bar {
+    width: 40px;
+    height: 200px;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: height 0.5s;
+}
+
+.bar-label {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
