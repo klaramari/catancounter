@@ -1,0 +1,160 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root {
+    --mainc: #f7931e;
+   
+  }
+
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--mainc)
+}
+
+.header{
+    border-bottom:3px solid var(--mainc);
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.dice{
+    color: white;
+    border-radius: 5px;
+    font-size: x-large;
+    width: 4rem; /* Adjust the width of each square as needed */
+    height: 4rem; /* Adjust the height of each square as needed */
+    background-color: var(--mainc); /* Set the background color of the squares */
+    margin: 5px; /* Adjust the margin between squares as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display:grid;
+    grid-template: 110px 1fr 50px / 1fr;
+}
+
+
+.footer{
+    background-color: var(--mainc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: lighter;
+}
+
+.middle{
+    display:grid;
+    grid-template-columns: minmax(100px, 250px) 3fr;
+
+}
+
+.headerim{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    max-width: 100%;
+    height:auto;
+    max-height: 100%;
+}
+
+.sidebar ul{
+    padding-top: 50px;
+    padding-left: min(50px, 10%);
+    margin: 0;
+    height:30%;
+    list-style: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:left;
+    font-size: 1.2rem;
+    gap:20px;
+    
+}
+
+
+
+.sidebar{
+    border-right: 3px solid var(--mainc);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.dices{
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 5vw;
+    padding: 50px;
+    
+    align-content: center;
+    justify-items: center;
+}
+
+.computer{
+    background-color: white;
+    color: var(--mainc);
+    border: 1.5px solid var(--mainc);
+    font-size: medium;
+    width: 6rem;
+}
+
+.resultsbutton{
+    background-color: white;
+    border-radius: 5px;
+    font-size: x-large;
+    width: 10rem; /* Adjust the width of each square as needed */
+    height: 4rem; /* Adjust the height of each square as needed */
+    border: 1.5px solid var(--mainc);
+    margin: 5px; /* Adjust the margin between squares as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+}
