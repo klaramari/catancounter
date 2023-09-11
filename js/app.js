@@ -34,7 +34,9 @@ function rollDice(number){
     console.log(number);
     numbers.push(number);
     let lastroll = document.querySelector(".lastroll");
-    lastroll.innerText = `Your last roll was ${number}`;
+    lastroll.innerText = `Your last roll was `;
+    let lastrollnr = document.querySelector(".lastrollnr");
+    lastrollnr.innerText = `${number}`;
     showResults();
 };
 
@@ -113,15 +115,56 @@ function createHistogram(data) {
         }
     });
 
+    let largest = 0;
+
+    for (var i = 2; i <= 12; i++) {
+    if (frequencyMap[i] > largest ) {
+        largest = frequencyMap[i];
+    }
+    }
+
+
     // Loop through the numbers and create bars for each number
     for (let i = 2; i <= 12; i++) {
-        const bar = document.createElement('div');
-        bar.classList.add('bar');
-        bar.style.height = `${frequencyMap[i] * 20}px`; // Adjust the scaling as needed
-        const barLabel = document.createElement('div');
-        barLabel.classList.add('bar-label');
-        barLabel.textContent = `${i}: ${frequencyMap[i]}`;
-        bar.appendChild(barLabel);
-        histogramContainer.appendChild(bar);
+        const barContainer = document.createElement('div'); // Create a container for each bar and label
+    barContainer.classList.add('bar-container');
+
+    const bar = document.createElement('div');
+    bar.classList.add('bar');
+    bar.style.height = `${frequencyMap[i] * 400/largest}px`; // Adjust the scaling as needed
+
+    // Create the label below the bar
+    const barLabel = document.createElement('div');
+    barLabel.classList.add('bar-label');
+    barLabel.textContent = `${i}`;
+    const barLabel2 = document.createElement('div');
+    barLabel2.classList.add('bar-label-nr');
+    barLabel2.textContent = `${frequencyMap[i]}`;
+
+    // Append the bar and label to the container
+    barContainer.appendChild(bar);
+    barContainer.appendChild(barLabel);
+    barContainer.appendChild(barLabel2);
+
+    histogramContainer.appendChild(barContainer); // Append the container to the histogram
     }
-}
+};
+
+function clickButton(){
+    let input;
+    while (true) { // this loop runs forever    
+        input = prompt("How often do you want to roll the virtual dice?");
+        input = parseInt(input);
+        if (isNaN(input)) {
+            alert("That is not a number!");
+        } 
+        else {
+            break;
+        }
+    }
+    console.log(input);
+    for(let i=1;i<=input;i++){
+     document.querySelector(".computer").click();
+    }
+    console.log(`I clicked ${input} times.`)
+};

@@ -38,6 +38,11 @@ body{
     color: var(--mainc)
 }
 
+
+h1{
+  font-weight: 400;
+}
+
 .header{
     border-bottom:3px solid var(--mainc);
     padding: 10px;
@@ -99,7 +104,7 @@ body{
     padding-top: 50px;
     padding-left: min(50px, 10%);
     margin: 0;
-    height:30%;
+    height:30vh;
     list-style: none;
     display:flex;
     flex-direction: column;
@@ -167,18 +172,36 @@ body{
     margin-top: 20px;
 }
 
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .bar {
-    width: 40px;
-    height: 200px;
-    background-color: #3498db;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    transition: height 0.5s;
+  width: 40px;
+  background-color: #3498db;
+  margin: 0 5px; /* Add margin to separate the bars */
+  border-radius: 3px;
+
 }
 
 .bar-label {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.showres{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lastroll{
+  font-size: 1rem;
+}
+.lastrollnr{
+  font-size: 2rem;
 }
