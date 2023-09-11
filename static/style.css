@@ -86,9 +86,11 @@ h1{
 
 .middle{
     display:grid;
-    grid-template-columns: minmax(100px, 250px) 3fr;
-
+    grid-template-columns: 1fr;
 }
+@media (min-width:481px) {.middle{
+  grid-template-columns: minmax(100px, 250px) 3fr;
+}}
 
 .headerim{
     display: flex;
@@ -117,15 +119,16 @@ h1{
     
 }
 
+.sidebar{display:none}
+@media (min-width:481px) {.sidebar{
+  display:flex;
+  border-right: 3px solid var(--mainc);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-start;
+}}
 
 
-.sidebar{
-    border-right: 3px solid var(--mainc);
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items:flex-start;
-}
 
 .dices{
     display: grid;
@@ -180,13 +183,17 @@ h1{
   align-items: center;
 }
 
+
+
 .bar {
-  width: 40px;
+  width: 20px;
   background-color: #3498db;
   margin: 0 5px; /* Add margin to separate the bars */
   border-radius: 3px;
-
 }
+@media (min-width:481px) {.bar{
+  width: 40px;
+}}
 
 .bar-label {
   text-align: center;
