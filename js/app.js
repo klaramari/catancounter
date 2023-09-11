@@ -25,8 +25,17 @@ let showresults = 0;
 let numbers = [];
 let reset = document.querySelector(".reset");
 reset.addEventListener("click", () => {
+    
+    //all numbers reset
     numbers = [];
+    //results display reset
     showResults();
+
+    //last roll reset
+    let lastroll = document.querySelector(".lastroll");
+    lastroll.innerText = ``;
+    let lastrollnr = document.querySelector(".lastrollnr");
+    lastrollnr.innerText = ``;
 });
 
 
