@@ -49,7 +49,7 @@ reset.addEventListener("click", () => {
 
 
 function rollDice(number){
-    console.log(number);
+    
     numbers.push(number);
     let lastroll = document.querySelector(".lastroll");
     lastroll.innerText = `Your last roll was `;
