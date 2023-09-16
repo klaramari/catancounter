@@ -1,9 +1,18 @@
+let di = document.querySelector(".ul1")
+di.addEventListener("click", () => loadDices());
+document.addEventListener('DOMContentLoaded', () => loadDices());
 
+let logo = document.querySelector(".logo")
+logo.addEventListener("click", () => loadDices());
 
-document.addEventListener('DOMContentLoaded', function() {
+function loadDices() {
+    document.querySelector(".resultsbutton").style.display = "flex"
+    let header = document.querySelector(".headermain")
+    header.innerText = "First: Roll your dice."
+    let resb = document.querySelector(".resultsbutton")
+    resb.innerText = "Show results"
     let dices = document.querySelector(".dices")
- 
-
+    dices.innerHTML=""
     for (var i = 2; i <= 12; i++) {
         let dice = document.createElement('div');
         dice.className = `dice dice${i}`;
@@ -19,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     dice.innerText = "Roll for me";
     dices.appendChild(dice);
     dice.addEventListener("click", () => rollRandom());
+};
 
-});
 let showresults = 0;
 let numbers = [];
 let reset = document.querySelector(".reset");
@@ -177,3 +186,39 @@ function clickButton(){
     }
     console.log(`I clicked ${input} times.`)
 };
+
+
+// code to show what this is
+let exp = document.querySelector(".ul2")
+let text1 = `This is a counter for the game of catan.
+\r\n Do you know the feeling? You're playing a round of catan, but your numbers are never rolled.
+\r\n Be sad no more! With Catan counter, you can prove your fellow players how unlucky you were this round.
+\r\n \r\n Get rolling!`
+exp.addEventListener("click", () => openExplanation("What is this?", text1));
+
+function openExplanation(heading, text){
+    document.querySelector(".resultsbutton").style.display = "none"
+    let header = document.querySelector(".headermain")
+    header.innerText = heading;
+    let dices = document.querySelector(".dices")
+    dices.innerHTML=""
+    let paragra = document.createElement('div');
+        paragra.className = `paragra`;
+        paragra.textContent = text;
+        dices.appendChild(paragra);
+    ;
+
+}
+
+
+// code to show how to use
+
+let exp2 = document.querySelector(".ul3")
+let text2 = `Using catancounter is quite simple: You just log every dice roll you make in the real game by clicking on the number.
+\r\n You can also click on the button "roll random" to roll a virtual dice instead. Then, the number rolled is logged automatically.
+\r\n \r\n Clicking on show results gives you a histogram of the numbers rolled.
+
+
+\r\n\r\n More features to come soon! 
+`
+exp2.addEventListener("click", () => openExplanation("How does this work?", text2));

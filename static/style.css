@@ -214,3 +214,9 @@ h1{
 .lastrollnr{
   font-size: 2rem;
 }
+
+
+.paragra{
+  grid-column: 1 / 4;
+  white-space: pre-line;
+}
